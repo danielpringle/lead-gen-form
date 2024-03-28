@@ -18,6 +18,7 @@ use WFRF_Core\Classes as Classes;
 use WFRF_Core\Shortcodes as Shortcodes;
 use WFRF_Core\Admin as Admin;
 
+
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
 	die;
@@ -29,7 +30,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 // Hook initialization functions.
 add_action( 'plugins_loaded', __NAMESPACE__ . '\init' );
-//add_action( 'plugins_loaded', __NAMESPACE__ . '\admin_init' );
+add_action( 'plugins_loaded', __NAMESPACE__ . '\admin_init' );
 
 
 /**
@@ -86,15 +87,43 @@ function init() {
 function admin_init() {
 
 
-	$customWPMenu = new Admin\AdminSettings( array(
-		'slug' => 'wpmenu',
-		'title' => 'WP Menu',
-		'desc' => 'Settings for theme custom WordPress Menu',
-		'icon' => 'dashicons-welcome-widgets-menus',
-		'position' => 99,
-	));
+	// $customWPMenu = new Admin\AdminSettings( array(
+	// 	'slug' => 'wpmenu',
+	// 	'title' => 'WP Menu',
+	// 	'desc' => 'Settings for theme custom WordPress Menu',
+	// 	'icon' => 'dashicons-welcome-widgets-menus',
+	// 	'position' => 99,
+	// ));
 
 
+
+	// $adminPage = new Admin\AdminPage( array(
+	// 	'page-title' => 'Yulinka Page',
+	// 	'menu-title' => 'Yulinka',
+	// 	'capability' => 'Settings for Yulinka WordPress Menu',
+	// 	'menu-slug' => 'yulinka',
+	// 	'function' => 'test',
+	// 	'icon-url' => 'dashicons-welcome-widgets-menus',
+	// 	'position' => 99,
+	// ));
+	require_once AC_PATH . 'admin/admin-v2/class-admin-page.php';
+	//$adminPage = new Admin\AdminPage;
+
+	// $adminPage = new Admin\AdminPage( array(
+	// 	'page-title' => 'Yulinka Page',
+	// 	// 'menu-title' => 'Yulinka',
+	// 	// 'capability' => 'Settings for Yulinka WordPress Menu',
+	// 	// 'menu-slug' => 'yulinka',
+	// 	// 'function' => 'test',
+	// 	// 'icon-url' => 'dashicons-welcome-widgets-menus',
+	// 	// 'position' => 99,
+	// ));
+
+	$adminPage = new Admin\AdminPage($data);
+
+	$data = array(
+		'page-title' => 'Yulinka Page1',
+	);
 
 }
 

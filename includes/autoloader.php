@@ -38,6 +38,7 @@ define( 'AC_CLASSES', [
 	__NAMESPACE__ . '\Classes\AssetVersioning'          	 => AC_CLASS . 'asset-versioning.php',
     __NAMESPACE__ . '\Classes\EnqueueAssets'            	 => AC_CLASS . 'enqueue-assets.php',
 	__NAMESPACE__ . '\Shortcodes\SC_WF_Register_Journey'	     => AC_SC . 'wf-register-journey.php',
+	__NAMESPACE__ . '\Classes\AdminPage'	     => AC_CLASS . 'admin-page.php',
 ] );
 
 
